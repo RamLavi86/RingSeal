@@ -88,16 +88,19 @@
             position: relative;
         }
 
-        /* SVG Product Illustrations */
-        .product-circle {
-            width: 280px;
-            height: 280px;
-            filter: drop-shadow(0 10px 30px rgba(0, 0, 0, 0.3));
-            transition: transform 0.3s ease;
+        /* Product Photos */
+        .product-photo {
+            width: 350px;
+            height: 350px;
+            object-fit: cover;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
 
-        .product-circle:hover {
-            transform: scale(1.05);
+        .product-photo:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(255, 107, 53, 0.3);
         }
 
         .size-label {
@@ -437,13 +440,17 @@
                 grid-template-columns: 1fr;
             }
 
-            .product-circle {
-                width: 200px;
-                height: 200px;
+            .product-photo {
+                width: 280px;
+                height: 280px;
             }
 
             .section-title {
                 font-size: 2rem;
+            }
+
+            .product-showcase {
+                gap: 30px;
             }
         }
 
@@ -479,73 +486,18 @@
 
             <div class="product-showcase">
                 <div class="product-image">
-                    <svg class="product-circle" viewBox="0 0 300 300">
-                        <!-- Shadow -->
-                        <ellipse cx="150" cy="280" rx="120" ry="15" fill="rgba(0,0,0,0.1)" />
-
-                        <!-- Main circle - black center -->
-                        <circle cx="150" cy="150" r="130" fill="#2C2C2C" />
-
-                        <!-- Textured pattern on black surface -->
-                        <defs>
-                            <pattern id="texture-m" x="0" y="0" width="4" height="4" patternUnits="userSpaceOnUse">
-                                <rect width="4" height="4" fill="#2C2C2C"/>
-                                <circle cx="2" cy="2" r="0.5" fill="#3C3C3C" opacity="0.5"/>
-                            </pattern>
-                        </defs>
-                        <circle cx="150" cy="150" r="125" fill="url(#texture-m)" />
-
-                        <!-- Orange/coral raised edge (3D effect) -->
-                        <circle cx="150" cy="150" r="130" fill="none" stroke="#FF6B35" stroke-width="25" opacity="0.9"/>
-
-                        <!-- Outer highlight for 3D effect -->
-                        <circle cx="150" cy="150" r="142" fill="none" stroke="#FF8555" stroke-width="3" opacity="0.6"/>
-
-                        <!-- Inner shadow for depth -->
-                        <circle cx="150" cy="150" r="117" fill="none" stroke="#1C1C1C" stroke-width="2" opacity="0.4"/>
-
-                        <!-- Subtle shine effect -->
-                        <ellipse cx="120" cy="100" rx="50" ry="30" fill="white" opacity="0.1" />
-                    </svg>
-                    <div class="size-label">SIZE M (16-18cm)</div>
+                    <img src="product-wooden-table.jpg" alt="RingSeal Professional on rustic wooden table" class="product-photo">
+                    <div class="size-label">Professional Quality</div>
                 </div>
 
                 <div class="product-image">
-                    <svg class="product-circle" viewBox="0 0 300 300" style="width: 320px; height: 320px;">
-                        <ellipse cx="150" cy="285" rx="130" ry="15" fill="rgba(0,0,0,0.1)" />
-                        <circle cx="150" cy="150" r="140" fill="#2C2C2C" />
-                        <defs>
-                            <pattern id="texture-l" x="0" y="0" width="4" height="4" patternUnits="userSpaceOnUse">
-                                <rect width="4" height="4" fill="#2C2C2C"/>
-                                <circle cx="2" cy="2" r="0.5" fill="#3C3C3C" opacity="0.5"/>
-                            </pattern>
-                        </defs>
-                        <circle cx="150" cy="150" r="135" fill="url(#texture-l)" />
-                        <circle cx="150" cy="150" r="140" fill="none" stroke="#FF6B35" stroke-width="25" opacity="0.9"/>
-                        <circle cx="150" cy="150" r="152" fill="none" stroke="#FF8555" stroke-width="3" opacity="0.6"/>
-                        <circle cx="150" cy="150" r="127" fill="none" stroke="#1C1C1C" stroke-width="2" opacity="0.4"/>
-                        <ellipse cx="120" cy="100" rx="50" ry="30" fill="white" opacity="0.1" />
-                    </svg>
-                    <div class="size-label">SIZE L (20-22cm)</div>
+                    <img src="product-bakery-scene.jpg" alt="RingSeal Professional in French bakery setting" class="product-photo">
+                    <div class="size-label">French-Inspired Design</div>
                 </div>
 
                 <div class="product-image">
-                    <svg class="product-circle" viewBox="0 0 300 300" style="width: 360px; height: 360px;">
-                        <ellipse cx="150" cy="290" rx="140" ry="15" fill="rgba(0,0,0,0.1)" />
-                        <circle cx="150" cy="150" r="145" fill="#2C2C2C" />
-                        <defs>
-                            <pattern id="texture-xl" x="0" y="0" width="4" height="4" patternUnits="userSpaceOnUse">
-                                <rect width="4" height="4" fill="#2C2C2C"/>
-                                <circle cx="2" cy="2" r="0.5" fill="#3C3C3C" opacity="0.5"/>
-                            </pattern>
-                        </defs>
-                        <circle cx="150" cy="150" r="140" fill="url(#texture-xl)" />
-                        <circle cx="150" cy="150" r="145" fill="none" stroke="#FF6B35" stroke-width="25" opacity="0.9"/>
-                        <circle cx="150" cy="150" r="157" fill="none" stroke="#FF8555" stroke-width="3" opacity="0.6"/>
-                        <circle cx="150" cy="150" r="132" fill="none" stroke="#1C1C1C" stroke-width="2" opacity="0.4"/>
-                        <ellipse cx="120" cy="100" rx="50" ry="30" fill="white" opacity="0.1" />
-                    </svg>
-                    <div class="size-label">SIZE XL (24-26cm)</div>
+                    <img src="product-closeup.jpg" alt="RingSeal Professional close-up detail" class="product-photo">
+                    <div class="size-label">Premium Materials</div>
                 </div>
             </div>
 
@@ -779,13 +731,15 @@
             observer.observe(el);
         });
 
-        // Product circle hover effect
-        document.querySelectorAll('.product-circle').forEach(circle => {
-            circle.addEventListener('mouseenter', function() {
-                this.style.filter = 'drop-shadow(0 15px 40px rgba(255, 107, 53, 0.4))';
+        // Product photo hover effect
+        document.querySelectorAll('.product-photo').forEach(photo => {
+            photo.addEventListener('mouseenter', function() {
+                this.style.transform = 'translateY(-8px) scale(1.02)';
+                this.style.boxShadow = '0 20px 50px rgba(255, 107, 53, 0.4)';
             });
-            circle.addEventListener('mouseleave', function() {
-                this.style.filter = 'drop-shadow(0 10px 30px rgba(0, 0, 0, 0.3))';
+            photo.addEventListener('mouseleave', function() {
+                this.style.transform = 'translateY(0) scale(1)';
+                this.style.boxShadow = '0 10px 30px rgba(0, 0, 0, 0.2)';
             });
         });
     </script>

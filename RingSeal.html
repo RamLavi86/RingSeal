@@ -1,0 +1,793 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RingSeal Professional - Revolutionary Ring Baking Mat</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-orange: #FF6B35;
+            --dark-gray: #2C2C2C;
+            --light-gray: #F5F5F5;
+            --white: #FFFFFF;
+            --accent-gold: #D4AF37;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: var(--dark-gray);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        .hero {
+            background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+            color: var(--white);
+            padding: 80px 20px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at 50% 50%, rgba(255, 107, 53, 0.1) 0%, transparent 70%);
+            pointer-events: none;
+        }
+
+        .hero-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+        }
+
+        .logo {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--primary-orange);
+            margin-bottom: 1rem;
+            letter-spacing: 2px;
+        }
+
+        h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1.5rem;
+            font-weight: 700;
+            line-height: 1.2;
+        }
+
+        .tagline {
+            font-size: 1.5rem;
+            margin-bottom: 3rem;
+            color: rgba(255, 255, 255, 0.9);
+            font-weight: 300;
+        }
+
+        .product-showcase {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 40px;
+            margin: 60px 0;
+            flex-wrap: wrap;
+        }
+
+        .product-image {
+            position: relative;
+        }
+
+        /* SVG Product Illustrations */
+        .product-circle {
+            width: 280px;
+            height: 280px;
+            filter: drop-shadow(0 10px 30px rgba(0, 0, 0, 0.3));
+            transition: transform 0.3s ease;
+        }
+
+        .product-circle:hover {
+            transform: scale(1.05);
+        }
+
+        .size-label {
+            text-align: center;
+            margin-top: 15px;
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: var(--primary-orange);
+        }
+
+        .cta-button {
+            display: inline-block;
+            padding: 18px 45px;
+            background: var(--primary-orange);
+            color: var(--white);
+            text-decoration: none;
+            border-radius: 50px;
+            font-size: 1.2rem;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(255, 107, 53, 0.4);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .cta-button:hover {
+            background: #ff5722;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(255, 107, 53, 0.6);
+        }
+
+        .section {
+            padding: 80px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            text-align: center;
+            margin-bottom: 3rem;
+            color: var(--dark-gray);
+            font-weight: 700;
+        }
+
+        .problem-solution {
+            background: var(--light-gray);
+        }
+
+        .comparison-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            margin-top: 40px;
+        }
+
+        .comparison-card {
+            background: var(--white);
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .comparison-card.problem {
+            border-left: 5px solid #e74c3c;
+        }
+
+        .comparison-card.solution {
+            border-left: 5px solid var(--primary-orange);
+        }
+
+        .comparison-card h3 {
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
+            color: var(--dark-gray);
+        }
+
+        .comparison-card ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .comparison-card li {
+            padding: 12px 0;
+            border-bottom: 1px solid #eee;
+            font-size: 1.1rem;
+        }
+
+        .comparison-card li::before {
+            margin-right: 10px;
+            font-weight: bold;
+        }
+
+        .problem li::before {
+            content: '✗';
+            color: #e74c3c;
+        }
+
+        .solution li::before {
+            content: '✓';
+            color: #27ae60;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+            margin-top: 40px;
+        }
+
+        .feature-card {
+            text-align: center;
+            padding: 40px 30px;
+            background: var(--white);
+            border-radius: 15px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 30px rgba(0, 0, 0, 0.15);
+        }
+
+        .feature-icon {
+            font-size: 3rem;
+            margin-bottom: 1.5rem;
+            color: var(--primary-orange);
+        }
+
+        .feature-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: var(--dark-gray);
+        }
+
+        .feature-card p {
+            color: #666;
+            font-size: 1rem;
+            line-height: 1.8;
+        }
+
+        .size-guide {
+            background: var(--dark-gray);
+            color: var(--white);
+        }
+
+        .size-guide .section-title {
+            color: var(--white);
+        }
+
+        .size-table {
+            width: 100%;
+            max-width: 800px;
+            margin: 0 auto;
+            background: var(--white);
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .size-table table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .size-table th {
+            background: var(--primary-orange);
+            color: var(--white);
+            padding: 20px;
+            font-size: 1.2rem;
+            text-align: left;
+        }
+
+        .size-table td {
+            padding: 20px;
+            color: var(--dark-gray);
+            font-size: 1.1rem;
+            border-bottom: 1px solid #eee;
+        }
+
+        .size-table tr:last-child td {
+            border-bottom: none;
+        }
+
+        .size-table tr:hover {
+            background: rgba(255, 107, 53, 0.05);
+        }
+
+        .how-it-works {
+            background: linear-gradient(135deg, #fff 0%, #f8f8f8 100%);
+        }
+
+        .steps-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .step {
+            text-align: center;
+            padding: 30px;
+        }
+
+        .step-number {
+            width: 60px;
+            height: 60px;
+            background: var(--primary-orange);
+            color: var(--white);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin: 0 auto 20px;
+            box-shadow: 0 4px 15px rgba(255, 107, 53, 0.3);
+        }
+
+        .step h3 {
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+            color: var(--dark-gray);
+        }
+
+        .step p {
+            color: #666;
+            line-height: 1.8;
+        }
+
+        .testimonials {
+            background: var(--light-gray);
+        }
+
+        .testimonial-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .testimonial {
+            background: var(--white);
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            position: relative;
+        }
+
+        .testimonial::before {
+            content: '"';
+            font-size: 4rem;
+            color: var(--primary-orange);
+            opacity: 0.3;
+            position: absolute;
+            top: 10px;
+            left: 20px;
+            font-family: Georgia, serif;
+        }
+
+        .testimonial-text {
+            font-style: italic;
+            color: #555;
+            margin-bottom: 1.5rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .testimonial-author {
+            font-weight: 600;
+            color: var(--dark-gray);
+        }
+
+        .testimonial-role {
+            color: var(--primary-orange);
+            font-size: 0.9rem;
+        }
+
+        .cta-section {
+            background: linear-gradient(135deg, var(--primary-orange) 0%, #ff5722 100%);
+            color: var(--white);
+            text-align: center;
+            padding: 80px 20px;
+        }
+
+        .cta-section h2 {
+            font-size: 2.8rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .cta-section p {
+            font-size: 1.3rem;
+            margin-bottom: 2.5rem;
+            opacity: 0.95;
+        }
+
+        .cta-button.secondary {
+            background: var(--white);
+            color: var(--primary-orange);
+        }
+
+        .cta-button.secondary:hover {
+            background: var(--light-gray);
+            color: var(--dark-gray);
+        }
+
+        footer {
+            background: var(--dark-gray);
+            color: rgba(255, 255, 255, 0.7);
+            text-align: center;
+            padding: 40px 20px;
+        }
+
+        .badge {
+            display: inline-block;
+            background: var(--accent-gold);
+            color: var(--dark-gray);
+            padding: 8px 20px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            margin-bottom: 20px;
+            letter-spacing: 1px;
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2.5rem;
+            }
+
+            .tagline {
+                font-size: 1.2rem;
+            }
+
+            .comparison-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .product-circle {
+                width: 200px;
+                height: 200px;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+        }
+
+        .material-info {
+            background: linear-gradient(135deg, #fff5f0 0%, #ffe8dc 100%);
+            padding: 40px;
+            border-radius: 15px;
+            margin: 40px 0;
+            border-left: 5px solid var(--primary-orange);
+        }
+
+        .material-info h3 {
+            color: var(--primary-orange);
+            font-size: 1.6rem;
+            margin-bottom: 1rem;
+        }
+
+        .material-info p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: #555;
+        }
+    </style>
+</head>
+<body>
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <div class="logo">RINGSEAL PROFESSIONAL</div>
+            <span class="badge">FRENCH-INSPIRED PRECISION</span>
+            <h1>The Future of Ring Baking</h1>
+            <p class="tagline">Say goodbye to messy foil and parchment paper. Meet perfection.</p>
+
+            <div class="product-showcase">
+                <div class="product-image">
+                    <svg class="product-circle" viewBox="0 0 300 300">
+                        <!-- Shadow -->
+                        <ellipse cx="150" cy="280" rx="120" ry="15" fill="rgba(0,0,0,0.1)" />
+
+                        <!-- Main circle - black center -->
+                        <circle cx="150" cy="150" r="130" fill="#2C2C2C" />
+
+                        <!-- Textured pattern on black surface -->
+                        <defs>
+                            <pattern id="texture-m" x="0" y="0" width="4" height="4" patternUnits="userSpaceOnUse">
+                                <rect width="4" height="4" fill="#2C2C2C"/>
+                                <circle cx="2" cy="2" r="0.5" fill="#3C3C3C" opacity="0.5"/>
+                            </pattern>
+                        </defs>
+                        <circle cx="150" cy="150" r="125" fill="url(#texture-m)" />
+
+                        <!-- Orange/coral raised edge (3D effect) -->
+                        <circle cx="150" cy="150" r="130" fill="none" stroke="#FF6B35" stroke-width="25" opacity="0.9"/>
+
+                        <!-- Outer highlight for 3D effect -->
+                        <circle cx="150" cy="150" r="142" fill="none" stroke="#FF8555" stroke-width="3" opacity="0.6"/>
+
+                        <!-- Inner shadow for depth -->
+                        <circle cx="150" cy="150" r="117" fill="none" stroke="#1C1C1C" stroke-width="2" opacity="0.4"/>
+
+                        <!-- Subtle shine effect -->
+                        <ellipse cx="120" cy="100" rx="50" ry="30" fill="white" opacity="0.1" />
+                    </svg>
+                    <div class="size-label">SIZE M (16-18cm)</div>
+                </div>
+
+                <div class="product-image">
+                    <svg class="product-circle" viewBox="0 0 300 300" style="width: 320px; height: 320px;">
+                        <ellipse cx="150" cy="285" rx="130" ry="15" fill="rgba(0,0,0,0.1)" />
+                        <circle cx="150" cy="150" r="140" fill="#2C2C2C" />
+                        <defs>
+                            <pattern id="texture-l" x="0" y="0" width="4" height="4" patternUnits="userSpaceOnUse">
+                                <rect width="4" height="4" fill="#2C2C2C"/>
+                                <circle cx="2" cy="2" r="0.5" fill="#3C3C3C" opacity="0.5"/>
+                            </pattern>
+                        </defs>
+                        <circle cx="150" cy="150" r="135" fill="url(#texture-l)" />
+                        <circle cx="150" cy="150" r="140" fill="none" stroke="#FF6B35" stroke-width="25" opacity="0.9"/>
+                        <circle cx="150" cy="150" r="152" fill="none" stroke="#FF8555" stroke-width="3" opacity="0.6"/>
+                        <circle cx="150" cy="150" r="127" fill="none" stroke="#1C1C1C" stroke-width="2" opacity="0.4"/>
+                        <ellipse cx="120" cy="100" rx="50" ry="30" fill="white" opacity="0.1" />
+                    </svg>
+                    <div class="size-label">SIZE L (20-22cm)</div>
+                </div>
+
+                <div class="product-image">
+                    <svg class="product-circle" viewBox="0 0 300 300" style="width: 360px; height: 360px;">
+                        <ellipse cx="150" cy="290" rx="140" ry="15" fill="rgba(0,0,0,0.1)" />
+                        <circle cx="150" cy="150" r="145" fill="#2C2C2C" />
+                        <defs>
+                            <pattern id="texture-xl" x="0" y="0" width="4" height="4" patternUnits="userSpaceOnUse">
+                                <rect width="4" height="4" fill="#2C2C2C"/>
+                                <circle cx="2" cy="2" r="0.5" fill="#3C3C3C" opacity="0.5"/>
+                            </pattern>
+                        </defs>
+                        <circle cx="150" cy="150" r="140" fill="url(#texture-xl)" />
+                        <circle cx="150" cy="150" r="145" fill="none" stroke="#FF6B35" stroke-width="25" opacity="0.9"/>
+                        <circle cx="150" cy="150" r="157" fill="none" stroke="#FF8555" stroke-width="3" opacity="0.6"/>
+                        <circle cx="150" cy="150" r="132" fill="none" stroke="#1C1C1C" stroke-width="2" opacity="0.4"/>
+                        <ellipse cx="120" cy="100" rx="50" ry="30" fill="white" opacity="0.1" />
+                    </svg>
+                    <div class="size-label">SIZE XL (24-26cm)</div>
+                </div>
+            </div>
+
+            <a href="#order" class="cta-button">Order Now</a>
+        </div>
+    </section>
+
+    <!-- Problem/Solution Section -->
+    <section class="section problem-solution">
+        <h2 class="section-title">The Ring Baking Revolution</h2>
+        <div class="comparison-grid">
+            <div class="comparison-card problem">
+                <h3>The Old Way</h3>
+                <ul>
+                    <li>Messy aluminum foil wrapping</li>
+                    <li>Multiple layers of parchment paper</li>
+                    <li>Constant leaking and spillage</li>
+                    <li>Time-consuming preparation</li>
+                    <li>Inconsistent results</li>
+                    <li>Wasteful single-use materials</li>
+                    <li>Difficult to clean up</li>
+                </ul>
+            </div>
+            <div class="comparison-card solution">
+                <h3>The RingSeal Way</h3>
+                <ul>
+                    <li>One-piece professional solution</li>
+                    <li>Perfect seal every single time</li>
+                    <li>Zero leakage guaranteed</li>
+                    <li>Ready in seconds</li>
+                    <li>Professional-grade results</li>
+                    <li>Reusable for years</li>
+                    <li>Dishwasher safe</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="material-info">
+            <h3>Premium Silpat-Inspired Construction</h3>
+            <p>
+                Crafted with the same precision as the legendary Silpat baking mats, RingSeal Professional
+                features a premium fiberglass core coated with food-grade silicone for the non-stick baking surface.
+                The raised edges are reinforced with heat-resistant silicone rubber, withstanding temperatures
+                up to 480°F (250°C). This French-inspired engineering ensures perfect heat distribution,
+                durability, and professional results that rival the finest pâtisseries.
+            </p>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="section">
+        <h2 class="section-title">Professional Features</h2>
+        <div class="features-grid">
+            <div class="feature-card">
+                <div class="feature-icon">🔥</div>
+                <h3>Heat Resistant</h3>
+                <p>Withstands temperatures up to 480°F (250°C). Safe for ovens, freezers, and dishwashers.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">💧</div>
+                <h3>100% Leak-Proof</h3>
+                <p>Specially designed raised edges create a perfect seal with your baking ring. No more spills.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">♻️</div>
+                <h3>Eco-Friendly</h3>
+                <p>Reusable for thousands of bakes. Eliminate waste from foil and parchment paper.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">✨</div>
+                <h3>Non-Stick Surface</h3>
+                <p>Premium silicone coating ensures easy release. Your creations slide off effortlessly.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">🎯</div>
+                <h3>Perfect Fit</h3>
+                <p>Three sizes accommodate all standard baking rings. Each size fits two ring diameters.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">🧼</div>
+                <h3>Easy Maintenance</h3>
+                <p>Dishwasher safe or quick hand wash. Stores flat without taking up space.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Size Guide Section -->
+    <section class="section size-guide">
+        <h2 class="section-title">Size Guide</h2>
+        <div class="size-table">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Size</th>
+                        <th>Ring Diameter</th>
+                        <th>Best For</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>M</strong></td>
+                        <td>16cm & 18cm (6.3" & 7")</td>
+                        <td>Individual cheesecakes, tarts, small cakes</td>
+                    </tr>
+                    <tr>
+                        <td><strong>L</strong></td>
+                        <td>20cm & 22cm (7.9" & 8.7")</td>
+                        <td>Standard layer cakes, entremet, mousse cakes</td>
+                    </tr>
+                    <tr>
+                        <td><strong>XL</strong></td>
+                        <td>24cm & 26cm (9.4" & 10.2")</td>
+                        <td>Large cakes, party desserts, celebration cakes</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <!-- How It Works Section -->
+    <section class="section how-it-works">
+        <h2 class="section-title">How It Works</h2>
+        <div class="steps-container">
+            <div class="step">
+                <div class="step-number">1</div>
+                <h3>Place Mat</h3>
+                <p>Set your RingSeal mat on your baking sheet or work surface.</p>
+            </div>
+            <div class="step">
+                <div class="step-number">2</div>
+                <h3>Position Ring</h3>
+                <p>Center your baking ring on the mat. The raised edges will embrace the ring.</p>
+            </div>
+            <div class="step">
+                <div class="step-number">3</div>
+                <h3>Add Filling</h3>
+                <p>Pour your cake batter, mousse, or filling with confidence. No leaks guaranteed.</p>
+            </div>
+            <div class="step">
+                <div class="step-number">4</div>
+                <h3>Bake & Release</h3>
+                <p>Bake as usual. Remove ring when ready. Your creation releases perfectly.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="section testimonials">
+        <h2 class="section-title">What Professional Bakers Say</h2>
+        <div class="testimonial-grid">
+            <div class="testimonial">
+                <p class="testimonial-text">
+                    This has completely transformed my entremet production. No more fumbling with foil at 5am.
+                    Professional results every single time.
+                </p>
+                <div class="testimonial-author">Sophie Laurent</div>
+                <div class="testimonial-role">Executive Pastry Chef, Paris</div>
+            </div>
+            <div class="testimonial">
+                <p class="testimonial-text">
+                    I was skeptical at first, but after one use I ordered the complete set.
+                    The time savings alone pay for themselves in a week.
+                </p>
+                <div class="testimonial-author">Marco Benedetti</div>
+                <div class="testimonial-role">Owner, Benedetti Patisserie</div>
+            </div>
+            <div class="testimonial">
+                <p class="testimonial-text">
+                    Game changer for my cheesecake business. Perfect seal, easy cleanup, and my cakes
+                    have never looked better. Worth every penny.
+                </p>
+                <div class="testimonial-author">Rachel Kim</div>
+                <div class="testimonial-role">Artisan Baker & Instructor</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section" id="order">
+        <h2>Ready to Elevate Your Baking?</h2>
+        <p>Join thousands of professional bakers who have made the switch</p>
+        <a href="#" class="cta-button secondary">Order Your RingSeal Set Today</a>
+        <p style="margin-top: 30px; font-size: 1rem; opacity: 0.9;">
+            30-Day Money-Back Guarantee | Free Shipping on Orders Over $50
+        </p>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2026 RingSeal Professional. Inspired by French pastry excellence.</p>
+        <p style="margin-top: 10px; font-size: 0.9rem;">
+            Premium baking solutions for professionals and enthusiasts
+        </p>
+    </footer>
+
+    <script>
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Add animation on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        // Observe all feature cards and testimonials
+        document.querySelectorAll('.feature-card, .testimonial, .step').forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(20px)';
+            el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+            observer.observe(el);
+        });
+
+        // Product circle hover effect
+        document.querySelectorAll('.product-circle').forEach(circle => {
+            circle.addEventListener('mouseenter', function() {
+                this.style.filter = 'drop-shadow(0 15px 40px rgba(255, 107, 53, 0.4))';
+            });
+            circle.addEventListener('mouseleave', function() {
+                this.style.filter = 'drop-shadow(0 10px 30px rgba(0, 0, 0, 0.3))';
+            });
+        });
+    </script>
+</body>
+</html>
